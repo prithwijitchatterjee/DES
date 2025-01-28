@@ -1,0 +1,129 @@
+First block of plaintext represented as a BitVector:  Left Block: 546865204c6f7264206f66207468652052696e6773206672616e63686973652c2063726561746564206279204a2e522e522e20546f6c6b69656e2c206973206120686967682066616e7461737920657069632073657420696e207468652066696374696f6e616c20776f726c64206f66204d6964646c652d65617274682e20497420666f6c6c6f777320746865207374727567676c6520746f2064657374726f7920746865204f6e652052696e672c206120706f77657266756c206172746966616374206372656174656420627920746865206461726b206c6f726420536175726f6e20746f20636f6e74726f6c2074686520776f726c642e205468652063656e7472616c2073746f7279207265766f6c7665732061726f756e642046726f646f2042616767696e732c206120686f626269742c20616e6420686973206a6f75726e657920746f204d6f756e7420446f6f6d2c207768657265207468652052696e672063616e2062652064657374726f7965642e20416c6f6e6720746865207761792c206865206973206169646564206279207468652046656c6c6f7773686970206f66207468652052696e672c20696e636c7564696e6720417261676f726e2c204c65676f6c61732c2047696d6c692c2047616e64616c662c20616e64206f7468657, Right Block: 2732e20546865206672616e636869736520696e636c7564657320746865206f726967696e616c206e6f76656c732c2061207072657175656c2063616c6c65642054686520486f626269742c20616e642061646170746174696f6e73206c696b65205065746572204a61636b736f6e277320637269746963616c6c79206163636c61696d65642066696c6d207472696c6f676965732c20546865204c6f7264206f66207468652052696e677320616e642054686520486f626269742e204974206578706c6f726573207468656d6573206f6620667269656e64736869702c207361637269666963652c2074686520636f7272757074696f6e206f6620706f7765722c20616e642074686520626174746c65206265747765656e20676f6f6420616e64206576696c2e2054686520776f726c64206f66204d6964646c652d656172746820697320726963686c792064657461696c65642c20666561747572696e6720646976657273652063756c74757265732c206c616e6775616765732c20616e6420686973746f726965732c206d616b696e67206974206f6e65206f6620746865206d6f73742062656c6f76656420616e6420696e666c75656e7469616c20776f726b7320696e2066616e74617379206c69746572617475726520616e642066696c6d2e
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 90e9a570400a
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): d8d63ff62690
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 78be5eaa
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 3c6e974f
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 2a835030a900
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): 59c1b4b19413
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): c5e37035
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): a2c5cdb4
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 90e9a570400a
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): 0830193f433e
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 4da11488
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): a808c11d
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 2a835030a900
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): bfa02741e1cc
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 73a68b7b
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 5b72ff06
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 90e9a570400a
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): 36b70034d095
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): df27d9b6
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): f3cef437
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 2a835030a900
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): f0b03cb39ced
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 52a87658
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 6a3481ce
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 90e9a570400a
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): 193fd45edaaa
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 10c8af3c
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 1b2325ea
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 2a835030a900
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): efd8b640e577
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 0e6e8850
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 535b1054
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 90e9a570400a
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): b76e9f92980e
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 16a91911
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): f2022956
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 2a835030a900
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): c59bc7b48fba
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 56752923
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): d403bc96
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 90e9a570400a
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): ae437dcd5b4b
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 9762fda3
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 71c76c9f
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 2a835030a900
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): 34f762066b72
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): def6e5a6
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 45cdb5bf
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 90e9a570400a
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): 7fe4f905ec4c
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 8f8ceb9b
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 5bae79d1
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 2a835030a900
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): 6461dd980dda
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 9e9ebcf0
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 77da15db
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 90e9a570400a
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): 8a749f5db70d
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 11d9ab67
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 95336de2
+First block of plaintext after expansion permutation in round 1/16
+Right Block (hex): 2a835030a900
+First block of plaintext after XOR with subkey in round 1/16
+Right Block (hex): f949d11eb329
+First block of plaintext after substitution using S-boxes in round 1/16
+Right Block (hex): 0204c584
+First block of plaintext after permutation using P-boxes in round 1/16
+Right Block (hex): 41043029
