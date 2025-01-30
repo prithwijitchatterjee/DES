@@ -5,6 +5,15 @@ from generate_round_keys import generate_round_keys
 from BitVector import BitVector
 from log import log
 
+# Pad plaintext with zeros if not a multiple of 8 bytes
+def pad_plaintext(plaintext):
+    padding_length = 8 - (len(plaintext) % 8)
+    return plaintext + (b'\x00' * padding_length)
+
+# Remove zero padding after decryption
+def unpad_plaintext(padded_plaintext):
+    return padded_plaintext.rstrip(b'\x00')
+
 def feistel_function(right_half, subkey, logFlag=False):
     # Expand the right half to 48bit
     expanded = permute(right_half, E)
@@ -28,25 +37,66 @@ def feistel_function(right_half, subkey, logFlag=False):
         log(f"Right Block (hex): {permuted.get_bitvector_in_hex()}")
     return permuted
 
-def des_encrypt_block(block, key):
-    """Encrypt a 64-bit block using DES."""
-    # TODO: need to uncomment the below code after adjusting the initial permutation
-    #block = permute(block, IP)
-    #print (f"Block after IP: {block.get_bitvector_in_hex()}")
-    left, right = block.divide_into_two()
-    log(f"First block of plaintext represented as a BitVector:  Left Block: {left.get_bitvector_in_hex()}, Right Block: {right.get_bitvector_in_hex()}")
-    subkeys = generate_round_keys(key)
-    for index, subkey in enumerate(subkeys):
-        left, right = right, left ^ feistel_function(right, subkey, 1==1)
-    #return permute(right + left, FP)
-    return right + left
+def des_encrypt_image(plaintext, key):
+    
+    # Generate Subkeys    
+    key_bv = BitVector(textstring=key)
+    subkeys = generate_round_keys(key_bv)
 
-def des_decrypt_block(block, key):
-    """Decrypt a 64-bit block using DES."""
-    #block = permute(block, IP)
-    left, right = block.divide_into_two()
-    subkeys = generate_round_keys(key)[::-1]
-    for subkey in subkeys:
-        left, right = right, left ^ feistel_function(right, subkey)
-    #return permute(right + left, FP)
-    return right + left
+    ciphertext_blocks = BitVector(size=0)
+
+    print(f"Length of plaintext: {len(plaintext)}")
+
+    for i in range(0, len(plaintext), 64):  # 64 bits
+        block = block = BitVector(rawbytes=plaintext[i:i+64])
+        left, right = block.divide_into_two()
+
+        for index, subkey in enumerate(subkeys):
+            left, right = right, left ^ feistel_function(right, subkey, index==0)
+        output = right + left
+        ciphertext_blocks += output
+        
+    return ciphertext_blocks
+
+def des_encrypt_block(plaintext, key):
+    
+    # Generate Subkeys
+    key_bv = BitVector(textstring=key)
+    subkeys = generate_round_keys(key_bv)
+
+    # Pad plaintext to be a multiple of 8 bytes
+    padded_plaintext = pad_plaintext(plaintext.encode())
+    ciphertext_blocks = BitVector(size=0)
+
+    for i in range(0, len(padded_plaintext), 8):
+        block = BitVector(rawbytes=padded_plaintext[i:i+8])
+        left, right = block.divide_into_two()
+        log(f"{i}th First block of plaintext represented as a BitVector:  Left Block: {left.get_bitvector_in_hex()}, Right Block: {right.get_bitvector_in_hex()}")
+        
+        for index, subkey in enumerate(subkeys):
+            left, right = right, left ^ feistel_function(right, subkey, index==0)
+        output = right + left       
+        ciphertext_blocks += output
+        
+    return ciphertext_blocks
+   
+def des_decrypt_block(ciphertext, key):
+    
+    # Generate Subkeys
+    key_bv = BitVector(textstring=key)
+    subkeys = generate_round_keys(key_bv)
+
+    ciphertext_blocks = BitVector(size=0)
+
+    for i in range(0, len(ciphertext), 16):  # 16 hex chars = 64 bits
+        block = BitVector(hexstring=ciphertext[i:i+16])
+        left, right = block.divide_into_two()
+
+        for subkey in reversed(subkeys):
+            left, right = right, left ^ feistel_function(right, subkey)
+        
+        output = right+left
+        ciphertext_blocks += output
+
+
+    return ciphertext_blocks

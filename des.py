@@ -1,5 +1,5 @@
 
-from des_algorithm import des_encrypt_block, des_decrypt_block
+from des_algorithm import des_encrypt_block, des_decrypt_block,des_encrypt_image
 from BitVector import BitVector
 from file_handling import read_ppm_image_file, write_to_file, read_from_file, write_bitvector_to_file, copy_ppm_header
 import argparse
@@ -13,23 +13,21 @@ class DES:
         plainTextInput = read_from_file(self.args.arguments[0])
         keyInput = read_from_file(self.args.arguments[1])
 
-        plainText = BitVector(textstring=plainTextInput)
-        key = BitVector(textstring=keyInput)
+        # # Pad plaintext to be a multiple of 8 bytes
+        # padded_plaintext = pad_plaintext(plainTextInput.encode())
+        # vector_plaintext = BitVector(rawbytes=padded_plaintext)
+        # key= BitVector(textstring=keyInput)
 
-        ciphertext = des_encrypt_block(plainText, key)
+        ciphertext = des_encrypt_block(plainTextInput, keyInput)
 
         #print(ciphertext)
-        write_to_file(self.args.arguments[2], ciphertext.get_bitvector_in_hex())
+        write_to_file(self.args.arguments[2], ciphertext.get_hex_string_from_bitvector())
 
     def handle_decryption(self):
         cipherTextInput = read_from_file(self.args.arguments[0])
         keyInput = read_from_file(self.args.arguments[1])
-
-        cipherText = BitVector(hexstring=cipherTextInput)
-        key = BitVector(textstring=keyInput)
-
-        decrypted = des_decrypt_block(cipherText, key)
-
+        
+        decrypted = des_decrypt_block(cipherTextInput, keyInput)
         write_to_file(self.args.arguments[2], decrypted.get_text_from_bitvector())
 
     def handle_image_encrypt(self):
@@ -39,10 +37,10 @@ class DES:
         plainTextInput = read_ppm_image_file(self.args.arguments[0])
         keyInput = read_from_file(self.args.arguments[1])
 
-        plainText = BitVector(rawbytes=plainTextInput)
-        key = BitVector(textstring=keyInput)
+        #plainText = BitVector(rawbytes=plainTextInput)
+        #key = BitVector(textstring=keyInput)
 
-        ciphertext = des_encrypt_block(plainText, key)
+        ciphertext = des_encrypt_image(plainTextInput, keyInput)
         write_bitvector_to_file(self.args.arguments[2], ciphertext)
 
     def run(self):
